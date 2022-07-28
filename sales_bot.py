@@ -1,10 +1,11 @@
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.utils.markdown import hbold, hlink
+import config
 from main import collect_data
 import json
 import markups as nav
 
-bot = Bot(token='5446221087:AAEF4ERrcs36yowE7XRSZT0vXLDMnh5ZoM8', parse_mode=types.ParseMode.HTML)
+bot = Bot(token=config.BOT_TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 

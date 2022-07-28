@@ -22,7 +22,7 @@ async def bot_message(message: types.Message):
     if message.text == 'Домашняя одежда':
         await bot.send_message(message.from_user.id, 'Выберите нужный раздел', reply_markup=nav.woman_home_keyboard)
     elif message.text in nav.categories_dict:
-        await bot.send_message(message.from_user.id, 'Пожалуйста, подождите...')
+        await message.answer('Пожалуйста, подождите...')
         collect_data(nav.categories_dict[message.text])
 
         with open('results.json') as file:

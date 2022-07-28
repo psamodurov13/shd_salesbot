@@ -1,23 +1,58 @@
 [
     {
-        "title": "Ночная сорочка Doctor nap",
-        "url": "https://sweethomedress.ru/katalog/nochnaja-sorochka-doctor-nap-v201589/",
-        "old_price": "2 940.00 р.",
-        "new_price": "2 205.00 р.",
-        "size": "S"
+        "title": "Купальник Gabbiano",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-gabbiano-g20085/",
+        "old_price": "4 200.00 р.",
+        "new_price": "3 990.00 р.",
+        "size": "42B, 44B, 44C, 44D, 46B, 46D, 48B"
     },
     {
-        "title": "Сорочка-сарафан Mia-Amore",
-        "url": "https://sweethomedress.ru/katalog/sorochka-sarafan-mia-amore-v181443/",
-        "old_price": "2 800.00 р.",
-        "new_price": "2 290.00 р.",
+        "title": "Купальник Gabbiano",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-gabbiano-g20070/",
+        "old_price": "4 200.00 р.",
+        "new_price": "3 990.00 р.",
+        "size": "44B, 44C, 44D, 46, 46B, 46C"
+    },
+    {
+        "title": "Купальник Gabbiano",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-gabbiano-210-marissa-g59192/",
+        "old_price": "4 300.00 р.",
+        "new_price": "3 990.00 р.",
+        "size": "44C, 44D, 46B, 48B"
+    },
+    {
+        "title": "Сарафан Mia-Mia",
+        "url": "https://sweethomedress.ru/katalog/sarafan-mia-mia-v181149/",
+        "old_price": "5 920.00 р.",
+        "new_price": "4 790.00 р.",
         "size": "XL"
     },
     {
-        "title": "Ночная сорочка Mia-Mia",
-        "url": "https://sweethomedress.ru/katalog/nochnaya-sorochka-mia-mia-yesenia-15131-24107/",
-        "old_price": "5 200.00 р.",
-        "new_price": "4 190.00 р.",
+        "title": "Купальник Gabbiano",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-gabbiano-184-marita/",
+        "old_price": "3 790.00 р.",
+        "new_price": "3 490.00 р.",
+        "size": "42, 46, 48"
+    },
+    {
+        "title": "Купальник Gabbiano",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-gabbiano-11-chica/",
+        "old_price": "3 590.00 р.",
+        "new_price": "2 890.00 р.",
+        "size": "42, 44, 46, 48C"
+    },
+    {
+        "title": "Купальник AQUA",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-aqua-19027/",
+        "old_price": "2 790.00 р.",
+        "new_price": "2 090.00 р.",
         "size": "L"
+    },
+    {
+        "title": "Купальник AQUA",
+        "url": "https://sweethomedress.ru/kupalniki/kupalnik-aqua-19013/",
+        "old_price": "2 390.00 р.",
+        "new_price": "1 790.00 р.",
+        "size": "48"
     }
 ]

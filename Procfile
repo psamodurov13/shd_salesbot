@@ -1,1 +1,1 @@
-worker: python sales_bot.py
+worker: python main.py

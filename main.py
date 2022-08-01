@@ -9,7 +9,7 @@ import os
 
 logger.add('debug.log', format='{time} {level} {message}', level='DEBUG', rotation='10 KB', compression='zip')
 token = os.getenv("TOKEN")
-bot = Bot(token='token', parse_mode=types.ParseMode.HTML)
+bot = Bot(token=token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 

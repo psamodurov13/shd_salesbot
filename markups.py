@@ -24,7 +24,7 @@ categories_dict = {
     'Платья': ['Женские домашние платья', 'https://sweethomedress.ru/katalog/platja/skidka/tovar-so-skidkoj/'],
     'Туники': ['Женские домашние туники', 'https://sweethomedress.ru/katalog/tuniki/skidka/tovar-so-skidkoj/']
 }
-main_keyboard.add(for_woman, for_man, for_kids, button_to_main)
+main_keyboard.add(for_woman, for_man, for_kids)
 
 # For woman #
 woman_keyboard = types.InlineKeyboardMarkup(resize_keyboard=True)

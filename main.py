@@ -39,33 +39,36 @@ async def choice_type(callback: types.CallbackQuery):
 @logger.catch
 @dp.callback_query_handler(Text(startswith='1'))
 async def link_sale(call: types.CallbackQuery):
-    link_keyboard = types.InlineKeyboardMarkup()
-    link = types.InlineKeyboardButton(text=f'{call.data[1:]} со скидкой', url=nav.categories_dict[call.data[1:]][1])
-    link_keyboard.add(link)
-    await call.message.answer('Перейти на сайт: ', reply_markup=link_keyboard)
+    await call.message.answer('Перейти на сайт: ', reply_markup=nav.create_link_keyboard(call.data[1:]))
     await call.answer()
 
 
 @dp.callback_query_handler(Text(startswith='2'))
 async def link_sale(call: types.CallbackQuery):
     await call.message.answer('Пожалуйста, подождите...')
-    print(nav.categories_dict[call.data[1:]][1])
     pages = collect_data(nav.categories_dict[call.data[1:]][1])
-    for page in range(1, pages + 1):
-        products = get_urls(nav.categories_dict[call.data[1:]][1], page)
-        card_param = get_prod_info(products, nav.categories_dict[call.data[1:]])
-        for i in range(len(products)):
-            card_info = next(card_param)
-            print(card_info)
-            try:
-                card = (f'{hlink(card_info[0], card_info[1])}\n'
-                        f'{hbold("Цена до скидки: ", card_info[2])}\n'
-                        f'{hbold("Цена со скидкой: ", card_info[3])}\n'
-                        f'Размеры: {card_info[4]}\n')
-                await call.message.answer(card)
-                await call.answer()
-            except Exception:
-                print(Exception)
+    if pages > 0:
+        for page in range(1, pages + 1):
+            products = get_urls(nav.categories_dict[call.data[1:]][1], page)
+            card_param = get_prod_info(products, nav.categories_dict[call.data[1:]])
+            for i in range(len(products)):
+                card_info = next(card_param)
+                try:
+                    card = (f'{hlink(card_info[0], card_info[1])}\n'
+                            f'{hbold("Цена до скидки: ", card_info[2])}\n'
+                            f'{hbold("Цена со скидкой: ", card_info[3])}\n'
+                            f'Размеры: {card_info[4]}\n')
+                    await call.message.answer(card)
+                    await call.answer()
+                except Exception:
+                    print(Exception)
+    else:
+        await call.message.answer('К сожалению в данный момент товаров со скидкой в выбранном разделе нет. '
+                                  'Но Вы можете воспользоваться промокодом "tg1991" на скидку 10%. Скидка '
+                                  'действует при покупке от 4000 рублей. Перейти на сайт можно по ссылке '
+                                  'https://sweethomedress.ru', reply_markup=nav.main_keyboard)
+    await call.message.answer('Выберите категорию товаров', reply_markup=nav.main_keyboard)
+
 
 
 def main():

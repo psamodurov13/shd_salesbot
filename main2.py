@@ -19,23 +19,23 @@ def get_page(url):
 
 def collect_data(url):
     s = requests.Session()
-    print('start')
     response = s.get(url=url, headers=headers)
-    data = bs(response.text, features='html.parser')
-    print('data')
-    if data.select('ul.pagination > li > a'):
-        last_page = str(data.select('ul.pagination > li > a')[-1]).replace('">&gt;|</a>', '')
-        res = int(last_page.split('?page=')[-1])
-        print('count-pages')
+    if response.status_code != 200:
+        res = 0
     else:
-        res = 1
-    print(f'Количество страниц: {res}')
+        data = bs(response.text, features='html.parser')
+        if data.select('ul.pagination > li > a'):
+            last_page = str(data.select('ul.pagination > li > a')[-1]).replace('">&gt;|</a>', '')
+            res = int(last_page.split('?page=')[-1])
+        else:
+            res = 1
+        print(f'Количество страниц: {res}')
     return res
 
 
 def get_urls(url, page):
     s = requests.Session()
-    print(f'page {page}')
+    print(f'Страница {page}')
     response = s.get(url=f'{url}/?page={page}', headers=headers)
     data = bs(response.text, features='html.parser')
     products_on_page = [el['href'] for el in data.select('.product-thumb .image a[href]')]

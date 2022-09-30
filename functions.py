@@ -1,20 +1,11 @@
 import requests
 from bs4 import BeautifulSoup as bs
-import json
 
 headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 '
                   '(KHTML, like Gecko) Version/15.5 Safari/605.1.15'
 }
-
-
-def get_page(url):
-    s = requests.Session()
-    response = s.get(url=url, headers=headers)
-
-    with open('index.html', 'w') as file:
-        file.write(response.text)
 
 
 def collect_data(url):
@@ -55,11 +46,3 @@ def get_prod_info(products_on_page, category):
                ', '.join(item.get_text().strip() for item in data.find_all('label', class_='optid-11'))]
         i += 1
         print(f'Обработано: {i} из {len(products_on_page)}')
-
-
-def main():
-    collect_data()
-
-
-if __name__ == '__main__':
-    main()

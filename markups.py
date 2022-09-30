@@ -36,6 +36,10 @@ woman_home_keyboard = types.InlineKeyboardMarkup(resize_keyboard=True)
 woman_home_buttons = ['Пижамы', 'Сорочки', 'Халаты', 'Костюмы', 'Комплекты', 'Платья', 'Туники']
 woman_home_keyboard.add(*[types.InlineKeyboardButton(text=i, callback_data=i) for i in woman_home_buttons], button_to_main)
 
+# Stop or continue
+stop_continue_keyboard = types.InlineKeyboardMarkup(resize_keyboard=True)
+cont_button = types.InlineKeyboardButton(text='Показать еще', callback_data='show')
+stop_continue_keyboard.add(cont_button, button_to_main)
 
 def view(category):
     view_keyboard = types.InlineKeyboardMarkup(row_width=1)

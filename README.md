@@ -1,3 +1,3 @@
-# Telegram-бот отправляющий ссылки на товары со скидкой
+# Telegram bot sending links to discounted products
 
-Телеграм-бот формирует ссылку на страницу со скидочными товарами выбранной категории или отправляет ссылки на сами товары, в зависимости от запроса пользователя
+The Telegram bot generates a link to a page with discounted products of the selected category or sends links to the products themselves, depending on the user's request
